@@ -206,6 +206,7 @@
 
     if (notificationMessage && self.callback)
     {
+    [UIApplication sharedApplication] applicationIconBadgeNumber = 2;
 
         NSMutableString *jsonStr = [NSMutableString stringWithString:@"{"];
 
