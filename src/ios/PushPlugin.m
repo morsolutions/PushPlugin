@@ -206,8 +206,6 @@
 
     if (notificationMessage && self.callback)
     {
-   // [UIApplication sharedApplication].applicationIconBadgeNumber = 2;
-
         NSMutableString *jsonStr = [NSMutableString stringWithString:@"{"];
 
         [self parseDictionary:notificationMessage intoJSON:jsonStr];
@@ -271,8 +269,6 @@
 - (void)setApplicationIconBadgeNumber:(CDVInvokedUrlCommand *)command {
 
     self.callbackId = command.callbackId;
-    
-    application.applicationIconBadgeNumber = 4;
 
     NSMutableDictionary* options = [command.arguments objectAtIndex:0];
     int badge = [[options objectForKey:@"badge"] intValue] ?: 0;
@@ -303,7 +299,6 @@
   
 #endif
 
-application.applicationIconBadgeNumber = 4;
     [self successWithMessage:[NSString stringWithFormat:@"app badge count set to %d", badge]];
 }
 -(void)successWithMessage:(NSString *)message
