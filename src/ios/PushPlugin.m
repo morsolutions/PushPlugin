@@ -270,9 +270,7 @@
 - (void)setApplicationIconBadgeNumber:(CDVInvokedUrlCommand *)command {
 
     self.callbackId = command.callbackId;
-    
-    application.applicationIconBadgeNumber = 9;
-/*
+
     NSMutableDictionary* options = [command.arguments objectAtIndex:0];
     int badge = [[options objectForKey:@"badge"] intValue] ?: 0;
 
@@ -301,7 +299,7 @@
     application.applicationIconBadgeNumber = badgeNumber;
   
 #endif
-*/
+
 
     [self successWithMessage:[NSString stringWithFormat:@"app badge count set to %d", badge]];
 }
