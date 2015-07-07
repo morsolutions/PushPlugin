@@ -107,7 +107,7 @@ notificationTypes |= UIRemoteNotificationTypeBadge;
 #endif
     }
 
-    notificationTypes |= UIRemoteNotificationTypeNewsstandContentAvailability;
+    //notificationTypes |= UIRemoteNotificationTypeNewsstandContentAvailability;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
     UserNotificationTypes |= UIUserNotificationActivationModeBackground;
 #endif
@@ -170,7 +170,7 @@ notificationTypes |= UIRemoteNotificationTypeBadge;
         NSString *pushAlert = @"disabled";
         NSString *pushSound = @"disabled";
         
-        NSString *pushBadge = @"enabled";
+        pushBadge = @"enabled";
 
         // Check what Registered Types are turned on. This is a bit tricky since if two are enabled, and one is off, it will return a number 2... not telling you which
         // one is actually disabled. So we are literally checking to see if rnTypes matches what is turned on, instead of by number. The "tricky" part is that the
