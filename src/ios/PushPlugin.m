@@ -124,6 +124,7 @@ notificationTypes |= UIRemoteNotificationTypeBadge;
         UIUserNotificationSettings *settings = [UIUserNotificationSettings settingsForTypes:UserNotificationTypes categories:nil];
         [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
         [[UIApplication sharedApplication] registerForRemoteNotifications];
+         NSLog(@"PushPlugin.register: Remote Setup");
     } else {
     		[[UIApplication sharedApplication] registerForRemoteNotificationTypes:notificationTypes];
     }
@@ -168,6 +169,8 @@ notificationTypes |= UIRemoteNotificationTypeBadge;
         NSString *pushBadge = @"disabled";
         NSString *pushAlert = @"disabled";
         NSString *pushSound = @"disabled";
+        
+        NSString *pushBadge = @"enabled";
 
         // Check what Registered Types are turned on. This is a bit tricky since if two are enabled, and one is off, it will return a number 2... not telling you which
         // one is actually disabled. So we are literally checking to see if rnTypes matches what is turned on, instead of by number. The "tricky" part is that the
