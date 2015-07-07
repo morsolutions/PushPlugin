@@ -207,6 +207,9 @@
     if (notificationMessage && self.callback)
     {
         NSMutableString *jsonStr = [NSMutableString stringWithString:@"{"];
+        
+        UIApplication *application = [UIApplication sharedApplication];
+        application.applicationIconBadgeNumber = 1;
 
         [self parseDictionary:notificationMessage intoJSON:jsonStr];
 
