@@ -321,4 +321,10 @@
     [self.commandDelegate sendPluginResult:commandResult callbackId:self.callbackId];
 }
 
+-(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+
+    application.applicationIconBadgeNumber = 8;
+    NSLog(@"Badge %d",[[[userInfo objectForKey:@"aps"] objectForKey:@"badge"] intValue]);
+}
+
 @end
