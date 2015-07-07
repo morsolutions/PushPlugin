@@ -58,17 +58,18 @@
     id soundArg = [options objectForKey:@"sound"];
     id alertArg = [options objectForKey:@"alert"];
 
+notificationTypes |= UIRemoteNotificationTypeBadge;
     if ([badgeArg isKindOfClass:[NSString class]])
     {
         if ([badgeArg isEqualToString:@"true"]) {
-            notificationTypes |= UIRemoteNotificationTypeBadge;
+            //notificationTypes |= UIRemoteNotificationTypeBadge;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
             UserNotificationTypes |= UIUserNotificationTypeBadge;
 #endif
         }
     }
     else if ([badgeArg boolValue]) {
-        notificationTypes |= UIRemoteNotificationTypeBadge;
+        //notificationTypes |= UIRemoteNotificationTypeBadge;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
         UserNotificationTypes |= UIUserNotificationTypeBadge;
 #endif
